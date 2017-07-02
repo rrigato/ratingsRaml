@@ -1,0 +1,27 @@
+[
+      {
+     "Show": "Space Dandy",
+     "Date": "2014-01-04",
+     "Time": "11:30",
+     "Household": "0.80",
+     "Total": "1153",
+     "AHousehold": null,
+     "ATotal": null
+    }, {
+     "Show": "Bleach",
+     "Date": "2014-01-04",
+     "Time": "12:00",
+     "Household": "0.80",
+     "Total": "1084",
+     "AHousehold": null,
+     "ATotal": null
+    }, {
+     "Show": "Naruto Shippuden",
+     "Date": "2014-01-04",
+     "Time": "12:30",
+     "Household": "0.70",
+     "Total": "933",
+     "AHousehold": null,
+     "ATotal": null
+    }
+]
