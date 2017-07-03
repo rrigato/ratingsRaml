@@ -7,3 +7,16 @@ version: v1
 
 types:
     show: !include schemas/show.schema
+
+resourceTypes:
+    readOnlyCollection:
+        description: |
+             Collection of available <<resourcePathName>> for toonami ratings.
+        get:
+            description: Get a list of <<resourcePathName>>.
+            responses:
+                200:
+                    body:
+                        application/json:
+                            example: |
+                                <<exampleCollection>>
