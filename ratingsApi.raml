@@ -46,3 +46,49 @@ resourceTypes:
                         application/json:
                             example: |
                                 {"message": "<<resourcePathName|!singularize>> not found" }
+
+
+
+
+traits:
+    searchable:
+        queryParameters:
+            query:
+                description: |
+                     <<description>>
+                example: |
+                    <<example>>
+    orderable:
+        queryParameters:
+            orderBy:
+                description: |
+                    Order by field: <<fieldsList>>
+                type: string
+                required: false
+            order:
+                description: Order
+                enum: [desc, asc]
+                default: desc
+                required: false
+    pageable:
+        queryParameters:
+            offset:
+                description: Skip over a number of elements by specifying an offset value for the query
+                type: integer
+                required: false
+                example: 20
+                default: 0
+            limit:
+                description: Limit the number of elements on the response
+                type: integer
+                required: false
+                example: 80
+                default: 10
+
+
+/shows:
+    type:
+        collection:
+            exampleCollection: !include examples/shows.json
+
+            
