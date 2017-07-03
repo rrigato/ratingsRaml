@@ -1,0 +1,107 @@
+[
+{
+   "Show": "Space Dandy",
+   "Date": "2014-01-04",
+   "Time": "11:30",
+   "Household": "0.80",
+   "Total": "1153",
+   "AHousehold": null,
+   "ATotal": null
+}, {
+   "Show": "Bleach",
+   "Date": "2014-01-04",
+   "Time": "12:00",
+   "Household": "0.80",
+   "Total": "1084",
+   "AHousehold": null,
+   "ATotal": null
+},{
+	"Show": "Naruto Shippuden",
+	"Date": "2014-01-04",
+	"Time": "12:30",
+	"Household": "0.70",
+	"Total": "933",
+	"AHousehold": null,
+	"ATotal": null
+}, {
+	"Show": "One Piece",
+	"Date": "2014-01-04",
+	"Time": "1:00",
+	"Household": "0.60",
+	"Total": "856",
+	"AHousehold": null,
+	"ATotal": null
+}, {
+	"Show": "Soul Eater",
+	"Date": "2014-01-04",
+	"Time": "1:30",
+	"Household": "0.60",
+	"Total": "866",
+	"AHousehold": null,
+	"ATotal": null
+}, {
+	"Show": "Sword Art Online",
+	"Date": "2014-01-04",
+	"Time": "2:00",
+	"Household": "0.60",
+	"Total": "773",
+	"AHousehold": null,
+	"ATotal": null
+}, {
+	"Show": "FLCL",
+	"Date": "2014-01-04",
+	"Time": "2:30",
+	"Household": "0.50",
+	"Total": "605",
+	"AHousehold": null,
+	"ATotal": null
+}, {
+	"Show": "Naruto",
+	"Date": "2014-01-04",
+	"Time": "3:00",
+	"Household": "0.50",
+	"Total": "685",
+	"AHousehold": null,
+	"ATotal": null
+}, {
+	"Show": "FMA Brotherhood",
+	"Date": "2014-01-04",
+	"Time": "3:30",
+	"Household": "0.40",
+	"Total": "532",
+	"AHousehold": null,
+	"ATotal": null
+}, {
+	"Show": "Ghost in the Shell",
+	"Date": "2014-01-04",
+	"Time": "4:00",
+	"Household": "0.40",
+	"Total": "500",
+	"AHousehold": null,
+	"ATotal": null
+}, {
+	"Show": "IGPX",
+	"Date": "2014-01-04",
+	"Time": "4:30",
+	"Household": "0.40",
+	"Total": "462",
+	"AHousehold": null,
+	"ATotal": null
+}, {
+	"Show": "Star Wars the Clone Wars",
+	"Date": "2014-01-04",
+	"Time": "5:00",
+	"Household": "0.40",
+	"Total": "531",
+	"AHousehold": null,
+	"ATotal": null
+}, {
+	"Show": "InuYasha",
+	"Date": "2014-01-04",
+	"Time": "5:30",
+	"Household": "0.40",
+	"Total": "547",
+	"AHousehold": null,
+	"ATotal": null
+}
+]
