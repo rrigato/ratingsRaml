@@ -15,8 +15,15 @@ resourceTypes:
         get:
             description: Get a list of <<resourcePathName>>.
             responses:
+                #if we can find the show or date
                 200:
                     body:
                         application/json:
                             example: |
                                 <<exampleCollection>>
+                #If we are unable to find a show or date
+                404:
+                    body:
+                        application/json:
+                            example: |
+                                {"message": "<<resourcePathName|!singularize>> not found"}
