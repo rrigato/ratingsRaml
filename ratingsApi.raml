@@ -1,6 +1,9 @@
-#%RAML 0.8
+#%RAML 1.0
 ---
 title: Toonami Ratings API
 #baseUri: http://jukebox.api.com
-baseUri: http://toonamiratings.api.com
+baseUri: http://toonamiratings.com
 version: v1
+
+types:
+    show: !include schemas/show.schema

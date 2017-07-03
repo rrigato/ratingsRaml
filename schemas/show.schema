@@ -1,6 +1,8 @@
 {
-  "type": "object",
-  "$schema": "http://json-schema.org/draft-03/schema",
+
+    "type": "object",
+    "$schema": "http://json-schema.org/draft-03/schema",
+      "required":true,
   "properties": {
     "Show": {
       "type": "string",
@@ -12,7 +14,7 @@
     },
     "Time": {
       "type": "string",
-      "required": true,
+      "required": true
     },
     "Total": {
       "type": "string",
@@ -20,7 +22,7 @@
     },
     "Household": {
       "type": "string",
-      "required": false,
+      "required": false
     },
     "AHousehold": {
       "type": "string",
@@ -28,7 +30,7 @@
     },
     "ATotal": {
       "type": "string",
-      "required": false,
+      "required": false
     }
-  }
+}
 }
