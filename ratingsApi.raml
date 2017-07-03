@@ -88,7 +88,18 @@ traits:
 
 /shows:
     type:
+        #giving an example of the array of schemas/rating.schema
+        #json objects that will be returned
         collection:
             exampleCollection: !include examples/shows.json
-
-            
+    get:
+        #calling a trait
+        is:
+            [
+                searchable:{
+                    description:
+                        "Give a show name and this will return the first 20 rating elements",
+                    example:
+                        "FLCL"
+                }
+            ]
