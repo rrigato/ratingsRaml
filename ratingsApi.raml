@@ -21,6 +21,7 @@ resourceTypes:
                         application/json:
                             example: |
                                 <<exampleCollection>>
+
                 #If we are unable to find a show or date
                 404:
                     body:
@@ -97,7 +98,6 @@ traits:
         #json objects that will be returned
         collection:
             exampleCollection: !include examples/saturday.json
-
     get:
         #calling a trait
         is:
