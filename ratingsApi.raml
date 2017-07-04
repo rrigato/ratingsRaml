@@ -159,3 +159,18 @@ traits:
                                 "sucess":true
 
                             }
+    post:
+        description: |
+            Adds a new ratings json object to the database
+
+            jsonSchema: The json schema the HTTP Request Body must follow
+
+            exampleJson: An Example of a json objec that complies with
+            jsonSchema
+        body:
+            application/json:
+                examples:
+                        jsonSchema:
+                            !include schemas/rating.schema
+                        exampleJson:
+                            !include  examples/show.json
