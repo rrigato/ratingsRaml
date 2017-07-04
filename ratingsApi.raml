@@ -123,3 +123,28 @@ traits:
 
                 }
             ]
+    delete:
+        description: |
+            Deletes a ratings instance from the database
+
+            Must pass a Date or a Show in the header parameters for
+            the delete to be successfull
+        headers:
+            show:
+                required: true
+                description: |
+                    Provides the name of the show to be deleted
+
+                    If we delete GXP we can pretend like that show never happened
+                    :)
+                example: |
+                    "Tenchi Muyo GXP"
+
+            saturday:
+                required: true
+                description: |
+                    Provides the date of the show to be deleted
+                    
+                    Note that this must be in YYYY-MM-DD
+                example: |
+                        "2012-11-10"
