@@ -144,7 +144,18 @@ traits:
                 required: true
                 description: |
                     Provides the date of the show to be deleted
-                    
+
                     Note that this must be in YYYY-MM-DD
                 example: |
                         "2012-11-10"
+        responses:
+            204:
+                body:
+                    application/json:
+
+                        example: |
+                            {
+
+                                "sucess":true
+
+                            }
