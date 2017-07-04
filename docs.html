@@ -1,0 +1,349 @@
+<!DOCTYPE HTML><html><head><title>Toonami Ratings API API documentation</title><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="generator" content="https://github.com/raml2html/raml2html 6.3.0"><link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/styles/default.min.css"><script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script><script type="text/javascript" src="https://netdna.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/highlight.min.js"></script><script type="text/javascript">
+      $(document).ready(function() {
+        $('.page-header pre code, .top-resource-description pre code, .modal-body pre code').each(function(i, block) {
+          hljs.highlightBlock(block);
+        });
+
+        $('[data-toggle]').click(function() {
+          var selector = $(this).data('target') + ' pre code';
+          $(selector).each(function(i, block) {
+            hljs.highlightBlock(block);
+          });
+        });
+
+        // open modal on hashes like #_action_get
+        $(window).bind('hashchange', function(e) {
+          var anchor_id = document.location.hash.substr(1); //strip #
+          var element = $('#' + anchor_id);
+
+          // do we have such element + is it a modal?  --> show it
+          if (element.length && element.hasClass('modal')) {
+            element.modal('show');
+          }
+        });
+
+        // execute hashchange on first page load
+        $(window).trigger('hashchange');
+
+        // remove url fragment on modal hide
+        $('.modal').on('hidden.bs.modal', function() {
+          try {
+            if (history && history.replaceState) {
+                history.replaceState({}, '', '#');
+            }
+          } catch(e) {}
+        });
+      });
+    </script><style>
+      .hljs {
+        background: transparent;
+      }
+      .parent {
+        color: #999;
+      }
+      .list-group-item > .badge {
+        float: none;
+        margin-right: 6px;
+      }
+      .panel-title > .methods {
+        float: right;
+      }
+      .badge {
+        border-radius: 0;
+        text-transform: uppercase;
+        width: 70px;
+        font-weight: normal;
+        color: #f3f3f6;
+        line-height: normal;
+      }
+      .badge_get {
+        background-color: #63a8e2;
+      }
+      .badge_post {
+        background-color: #6cbd7d;
+      }
+      .badge_put {
+        background-color: #22bac4;
+      }
+      .badge_delete {
+        background-color: #d26460;
+      }
+      .badge_patch {
+        background-color: #ccc444;
+      }
+      .list-group, .panel-group {
+        margin-bottom: 0;
+      }
+      .panel-group .panel+.panel-white {
+        margin-top: 0;
+      }
+      .panel-group .panel-white {
+        border-bottom: 1px solid #F5F5F5;
+        border-radius: 0;
+      }
+      .panel-white:last-child {
+        border-bottom-color: white;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+      }
+      .panel-white .panel-heading {
+        background: white;
+      }
+      .tab-pane ul {
+        padding-left: 2em;
+      }
+      .tab-pane h1 {
+        font-size: 1.3em;
+      }
+      .tab-pane h2 {
+        font-size: 1.2em;
+        padding-bottom: 4px;
+        border-bottom: 1px solid #ddd;
+      }
+      .tab-pane h3 {
+        font-size: 1.1em;
+      }
+      .tab-content {
+        border-left: 1px solid #ddd;
+        border-right: 1px solid #ddd;
+        border-bottom: 1px solid #ddd;
+        padding: 10px;
+      }
+      #sidebar {
+        margin-top: 30px;
+        padding-right: 5px;
+        overflow: auto;
+        height: 90%;
+      }
+      .top-resource-description {
+        border-bottom: 1px solid #ddd;
+        background: #fcfcfc;
+        padding: 15px 15px 0 15px;
+        margin: -15px -15px 10px -15px;
+      }
+      .resource-description {
+        border-bottom: 1px solid #fcfcfc;
+        background: #fcfcfc;
+        padding: 15px 15px 0 15px;
+        margin: -15px -15px 10px -15px;
+      }
+      .resource-description p:last-child {
+        margin: 0;
+      }
+      .list-group .badge {
+        float: left;
+      }
+      .method_description {
+        margin-left: 85px;
+      }
+      .method_description p:last-child {
+        margin: 0;
+      }
+      .list-group-item {
+        cursor: pointer;
+      }
+      .list-group-item:hover {
+        background-color: #f5f5f5;
+      }
+      pre code {
+        overflow: auto;
+        word-wrap: normal;
+        white-space: pre;
+      }
+      .items {
+        background: #f5f5f5;
+        color: #333;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        padding: 9.5px;
+        margin: 0 0 10px;
+        font-size: 13px;
+        line-height: 1.42857143;
+      }
+      .examples {
+        margin-left: 0.5em;
+      }
+      .resource-modal li > ul {
+        margin-bottom: 1em;
+      }
+    </style></head><body data-spy="scroll" data-target="#sidebar"><div class="container"><div class="row"><div class="col-md-9" role="main"><div class="page-header"><h1>Toonami Ratings API API documentation <small>version v1</small></h1><p>http://toonamiratings.com</p></div><div class="panel panel-default"><div class="panel-heading"><h3 id="ratings" class="panel-title">/ratings</h3></div><div class="panel-body"><div class="top-resource-description"><p>Collection of available ratings for toonami ratings.</p></div><div class="panel-group"><div class="panel panel-white resource-modal"><div class="panel-heading"><h4 class="panel-title"><a class="collapsed" data-toggle="collapse" href="#panel_ratings"><span class="parent"></span>/ratings</a> <span class="methods"><a href="#ratings_get"><span class="badge badge_get">get</span></a></span></h4></div><div id="panel_ratings" class="panel-collapse collapse"><div class="panel-body"><div class="list-group"><div onclick="window.location.href = '#ratings_get'" class="list-group-item"><span class="badge badge_get">get</span><div class="method_description"><p>Get a list of ratings.</p></div><div class="clearfix"></div></div></div></div></div><div class="modal fade" tabindex="0" id="ratings_get"><div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_get">get</span> <span class="parent"></span>/ratings</h4></div><div class="modal-body"><div class="alert alert-info"><p>Get a list of ratings.</p></div><ul class="nav nav-tabs"><li class="active"><a href="#ratings_get_request" data-toggle="tab">Request</a></li><li><a href="#ratings_get_response" data-toggle="tab">Response</a></li></ul><div class="tab-content"><div class="tab-pane active" id="ratings_get_request"><h3>Query Parameters</h3><ul><li><strong>show</strong>: <em>(string)</em><p>Give a show name and this will return the first 20 rating elements</p><p><strong>Example</strong>:</p><div class="examples"><pre><code>One Punch Man
+</code></pre></div></li><li><strong>saturday</strong>: <em>(string)</em><p>Provide the date you want toonami ratings for must be in YYYY-MM-DD format</p><p><strong>Example</strong>:</p><div class="examples"><pre><code>2014-01-04
+</code></pre></div></li></ul></div><div class="tab-pane" id="ratings_get_response"><h2>HTTP status code <a href="http://httpstatus.es/200" target="_blank">200</a></h2><h3>Body</h3><p><strong>Media type</strong>: application/json</p><p><strong>Type</strong>: object</p><p><strong>Example</strong>:</p><div class="examples"><pre><code>[{
+    		"Show": "One Punch Man",
+    		"Date": "2016-07-16",
+    		"Time": "12:00",
+    		"Household": null,
+    		"Total": "1282",
+    		"AHousehold": "0.62",
+    		"ATotal": "783"
+    	},
+    	{
+    		"Show": "One Punch Man",
+    		"Date": "2016-07-23",
+    		"Time": "12:00",
+    		"Household": null,
+    		"Total": "1443",
+    		"AHousehold": "0.66",
+    		"ATotal": "835"
+    	}, {
+    		"Show": "One Punch Man",
+    		"Date": "2016-07-30",
+    		"Time": "12:00",
+    		"Household": null,
+    		"Total": "1366",
+    		"AHousehold": "0.71",
+    		"ATotal": "894"
+    	}, {
+    		"Show": "One Punch Man",
+    		"Date": "2016-08-06",
+    		"Time": "12:00",
+    		"Household": null,
+    		"Total": "1228",
+    		"AHousehold": "0.62",
+    		"ATotal": "783"
+    	}, {
+    		"Show": "One Punch Man",
+    		"Date": "2016-08-06",
+    		"Time": "12:00",
+    		"Household": null,
+    		"Total": "1228",
+    		"AHousehold": "0.62",
+    		"ATotal": "783"
+    	}, {
+    		"Show": "One Punch Man",
+    		"Date": "2016-08-13",
+    		"Time": "12:00",
+    		"Household": null,
+    		"Total": "1124",
+    		"AHousehold": "0.51",
+    		"ATotal": "644"
+    	}, {
+    		"Show": "One Punch Man",
+    		"Date": "2016-08-20",
+    		"Time": "12:00",
+    		"Household": null,
+    		"Total": "1077",
+    		"AHousehold": "0.61",
+    		"ATotal": "773"
+    	}, {
+    		"Show": "One Punch Man",
+    		"Date": "2016-08-27",
+    		"Time": "12:00",
+    		"Household": null,
+    		"Total": "1149",
+    		"AHousehold": "0.63",
+    		"ATotal": "802"
+    	}, {
+    		"Show": "One Punch Man",
+    		"Date": "2016-09-03",
+    		"Time": "11:30",
+    		"Household": null,
+    		"Total": "1277",
+    		"AHousehold": null,
+    		"ATotal": null
+    	}, {
+    		"Show": "One Punch Man",
+    		"Date": "2016-09-03",
+    		"Time": "12:00",
+    		"Household": null,
+    		"Total": "1129",
+    		"AHousehold": "0.51",
+    		"ATotal": "658"
+    	}, {
+    		"Show": "One Punch Man",
+    		"Date": "2016-09-03",
+    		"Time": "12:30",
+    		"Household": null,
+    		"Total": "1029",
+    		"AHousehold": "0.47",
+    		"ATotal": "606"
+    	}, {
+    		"Show": "One Punch Man",
+    		"Date": "2016-09-03",
+    		"Time": "1:00",
+    		"Household": null,
+    		"Total": "962",
+    		"AHousehold": "0.44",
+    		"ATotal": "566"
+    	}, {
+    		"Show": "One Punch Man",
+    		"Date": "2016-09-03",
+    		"Time": "1:30",
+    		"Household": null,
+    		"Total": "880",
+    		"AHousehold": "0.43",
+    		"ATotal": "553"
+    	}, {
+    		"Show": "One Punch Man",
+    		"Date": "2016-09-03",
+    		"Time": "2:00",
+    		"Household": null,
+    		"Total": "860",
+    		"AHousehold": "0.40",
+    		"ATotal": "515"
+    	}, {
+    		"Show": "One Punch Man",
+    		"Date": "2016-09-03",
+    		"Time": "2:30",
+    		"Household": null,
+    		"Total": "740",
+    		"AHousehold": "0.38",
+    		"ATotal": "492"
+    	}, {
+    		"Show": "One Punch Man",
+    		"Date": "2016-09-10",
+    		"Time": "12:00",
+    		"Household": null,
+    		"Total": "1153",
+    		"AHousehold": "0.58",
+    		"ATotal": "739"
+    	}, {
+    		"Show": "One Punch Man",
+    		"Date": "2016-09-17",
+    		"Time": "12:00",
+    		"Household": null,
+    		"Total": "1203",
+    		"AHousehold": "0.60",
+    		"ATotal": "767"
+    	}, {
+    		"Show": "One Punch Man",
+    		"Date": "2016-09-24",
+    		"Time": "12:00",
+    		"Household": null,
+    		"Total": "1330",
+    		"AHousehold": "0.59",
+    		"ATotal": "751"
+    	}, {
+    		"Show": "One Punch Man",
+    		"Date": "2016-10-01",
+    		"Time": "12:30",
+    		"Household": null,
+    		"Total": "1201",
+    		"AHousehold": "0.55",
+    		"ATotal": "702"
+    	}, {
+    		"Show": "One Punch Man",
+    		"Date": "2016-10-08",
+    		"Time": "12:30",
+    		"Household": null,
+    		"Total": "1275",
+    		"AHousehold": "0.56",
+    		"ATotal": "721"
+    	}, {
+    		"Show": "One Punch Man",
+    		"Date": "2016-10-08",
+    		"Time": "3:00",
+    		"Household": null,
+    		"Total": "641",
+    		"AHousehold": "0.22",
+    		"ATotal": "286"
+    	}
+
+
+
+
+
+]
+
+</code></pre></div><h2>HTTP status code <a href="http://httpstatus.es/404" target="_blank">404</a></h2><h3>Body</h3><p><strong>Media type</strong>: application/json</p><p><strong>Type</strong>: object</p><p><strong>Example</strong>:</p><div class="examples"><pre><code>{"message": "rating not found"}
+</code></pre></div></div></div></div></div></div></div></div></div></div></div></div><div class="col-md-3"><div id="sidebar" class="hidden-print affix" role="complementary"><ul class="nav nav-pills nav-stacked"><li><a href="#ratings">/ratings</a></li></ul></div></div></div></div></body></html>
