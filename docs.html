@@ -166,184 +166,117 @@
       .resource-modal li > ul {
         margin-bottom: 1em;
       }
-    </style></head><body data-spy="scroll" data-target="#sidebar"><div class="container"><div class="row"><div class="col-md-9" role="main"><div class="page-header"><h1>Toonami Ratings API API documentation <small>version v1</small></h1><p>http://toonamiratings.com</p></div><div class="panel panel-default"><div class="panel-heading"><h3 id="ratings" class="panel-title">/ratings</h3></div><div class="panel-body"><div class="top-resource-description"><p>Collection of available ratings for toonami ratings.</p></div><div class="panel-group"><div class="panel panel-white resource-modal"><div class="panel-heading"><h4 class="panel-title"><a class="collapsed" data-toggle="collapse" href="#panel_ratings"><span class="parent"></span>/ratings</a> <span class="methods"><a href="#ratings_get"><span class="badge badge_get">get</span></a></span></h4></div><div id="panel_ratings" class="panel-collapse collapse"><div class="panel-body"><div class="list-group"><div onclick="window.location.href = '#ratings_get'" class="list-group-item"><span class="badge badge_get">get</span><div class="method_description"><p>Get a list of ratings.</p></div><div class="clearfix"></div></div></div></div></div><div class="modal fade" tabindex="0" id="ratings_get"><div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_get">get</span> <span class="parent"></span>/ratings</h4></div><div class="modal-body"><div class="alert alert-info"><p>Get a list of ratings.</p></div><ul class="nav nav-tabs"><li class="active"><a href="#ratings_get_request" data-toggle="tab">Request</a></li><li><a href="#ratings_get_response" data-toggle="tab">Response</a></li></ul><div class="tab-content"><div class="tab-pane active" id="ratings_get_request"><h3>Query Parameters</h3><ul><li><strong>show</strong>: <em>(string)</em><p>Give a show name and this will return the first 20 rating elements</p><p><strong>Example</strong>:</p><div class="examples"><pre><code>One Punch Man
+    </style></head><body data-spy="scroll" data-target="#sidebar"><div class="container"><div class="row"><div class="col-md-9" role="main"><div class="page-header"><h1>Toonami Ratings API API documentation <small>version v1</small></h1><p>http://toonamiratings.com</p></div><div class="panel panel-default"><div class="panel-heading"><h3 id="ratings" class="panel-title">/ratings</h3></div><div class="panel-body"><div class="top-resource-description"><p>Collection of available ratings for toonami ratings.</p></div><div class="panel-group"><div class="panel panel-white resource-modal"><div class="panel-heading"><h4 class="panel-title"><a class="collapsed" data-toggle="collapse" href="#panel_ratings"><span class="parent"></span>/ratings</a> <span class="methods"><a href="#ratings_get"><span class="badge badge_get">get</span></a> <a href="#ratings_delete"><span class="badge badge_delete">delete</span></a></span></h4></div><div id="panel_ratings" class="panel-collapse collapse"><div class="panel-body"><div class="list-group"><div onclick="window.location.href = '#ratings_get'" class="list-group-item"><span class="badge badge_get">get</span><div class="method_description"><p>Get a list of ratings.</p></div><div class="clearfix"></div></div><div onclick="window.location.href = '#ratings_delete'" class="list-group-item"><span class="badge badge_delete">delete</span><div class="method_description"><p>Deletes a ratings instance from the database</p><p>Must pass a Date or a Show in the header parameters for the delete to be successfull</p></div><div class="clearfix"></div></div></div></div></div><div class="modal fade" tabindex="0" id="ratings_get"><div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_get">get</span> <span class="parent"></span>/ratings</h4></div><div class="modal-body"><div class="alert alert-info"><p>Get a list of ratings.</p></div><ul class="nav nav-tabs"><li class="active"><a href="#ratings_get_request" data-toggle="tab">Request</a></li><li><a href="#ratings_get_response" data-toggle="tab">Response</a></li></ul><div class="tab-content"><div class="tab-pane active" id="ratings_get_request"><h3>Query Parameters</h3><ul><li><strong>show</strong>: <em>(string)</em><p>Give a show name and this will return the first 20 rating elements</p><p><strong>Example</strong>:</p><div class="examples"><pre><code>One Punch Man
 </code></pre></div></li><li><strong>saturday</strong>: <em>(string)</em><p>Provide the date you want toonami ratings for must be in YYYY-MM-DD format</p><p><strong>Example</strong>:</p><div class="examples"><pre><code>2014-01-04
-</code></pre></div></li></ul></div><div class="tab-pane" id="ratings_get_response"><h2>HTTP status code <a href="http://httpstatus.es/200" target="_blank">200</a></h2><h3>Body</h3><p><strong>Media type</strong>: application/json</p><p><strong>Type</strong>: object</p><p><strong>Example</strong>:</p><div class="examples"><pre><code>[{
-    		"Show": "One Punch Man",
-    		"Date": "2016-07-16",
-    		"Time": "12:00",
-    		"Household": null,
-    		"Total": "1282",
-    		"AHousehold": "0.62",
-    		"ATotal": "783"
-    	},
-    	{
-    		"Show": "One Punch Man",
-    		"Date": "2016-07-23",
-    		"Time": "12:00",
-    		"Household": null,
-    		"Total": "1443",
-    		"AHousehold": "0.66",
-    		"ATotal": "835"
-    	}, {
-    		"Show": "One Punch Man",
-    		"Date": "2016-07-30",
-    		"Time": "12:00",
-    		"Household": null,
-    		"Total": "1366",
-    		"AHousehold": "0.71",
-    		"ATotal": "894"
-    	}, {
-    		"Show": "One Punch Man",
-    		"Date": "2016-08-06",
-    		"Time": "12:00",
-    		"Household": null,
-    		"Total": "1228",
-    		"AHousehold": "0.62",
-    		"ATotal": "783"
-    	}, {
-    		"Show": "One Punch Man",
-    		"Date": "2016-08-06",
-    		"Time": "12:00",
-    		"Household": null,
-    		"Total": "1228",
-    		"AHousehold": "0.62",
-    		"ATotal": "783"
-    	}, {
-    		"Show": "One Punch Man",
-    		"Date": "2016-08-13",
-    		"Time": "12:00",
-    		"Household": null,
-    		"Total": "1124",
-    		"AHousehold": "0.51",
-    		"ATotal": "644"
-    	}, {
-    		"Show": "One Punch Man",
-    		"Date": "2016-08-20",
-    		"Time": "12:00",
-    		"Household": null,
-    		"Total": "1077",
-    		"AHousehold": "0.61",
-    		"ATotal": "773"
-    	}, {
-    		"Show": "One Punch Man",
-    		"Date": "2016-08-27",
-    		"Time": "12:00",
-    		"Household": null,
-    		"Total": "1149",
-    		"AHousehold": "0.63",
-    		"ATotal": "802"
-    	}, {
-    		"Show": "One Punch Man",
-    		"Date": "2016-09-03",
-    		"Time": "11:30",
-    		"Household": null,
-    		"Total": "1277",
-    		"AHousehold": null,
-    		"ATotal": null
-    	}, {
-    		"Show": "One Punch Man",
-    		"Date": "2016-09-03",
-    		"Time": "12:00",
-    		"Household": null,
-    		"Total": "1129",
-    		"AHousehold": "0.51",
-    		"ATotal": "658"
-    	}, {
-    		"Show": "One Punch Man",
-    		"Date": "2016-09-03",
-    		"Time": "12:30",
-    		"Household": null,
-    		"Total": "1029",
-    		"AHousehold": "0.47",
-    		"ATotal": "606"
-    	}, {
-    		"Show": "One Punch Man",
-    		"Date": "2016-09-03",
-    		"Time": "1:00",
-    		"Household": null,
-    		"Total": "962",
-    		"AHousehold": "0.44",
-    		"ATotal": "566"
-    	}, {
-    		"Show": "One Punch Man",
-    		"Date": "2016-09-03",
-    		"Time": "1:30",
-    		"Household": null,
-    		"Total": "880",
-    		"AHousehold": "0.43",
-    		"ATotal": "553"
-    	}, {
-    		"Show": "One Punch Man",
-    		"Date": "2016-09-03",
-    		"Time": "2:00",
-    		"Household": null,
-    		"Total": "860",
-    		"AHousehold": "0.40",
-    		"ATotal": "515"
-    	}, {
-    		"Show": "One Punch Man",
-    		"Date": "2016-09-03",
-    		"Time": "2:30",
-    		"Household": null,
-    		"Total": "740",
-    		"AHousehold": "0.38",
-    		"ATotal": "492"
-    	}, {
-    		"Show": "One Punch Man",
-    		"Date": "2016-09-10",
-    		"Time": "12:00",
-    		"Household": null,
-    		"Total": "1153",
-    		"AHousehold": "0.58",
-    		"ATotal": "739"
-    	}, {
-    		"Show": "One Punch Man",
-    		"Date": "2016-09-17",
-    		"Time": "12:00",
-    		"Household": null,
-    		"Total": "1203",
-    		"AHousehold": "0.60",
-    		"ATotal": "767"
-    	}, {
-    		"Show": "One Punch Man",
-    		"Date": "2016-09-24",
-    		"Time": "12:00",
-    		"Household": null,
-    		"Total": "1330",
-    		"AHousehold": "0.59",
-    		"ATotal": "751"
-    	}, {
-    		"Show": "One Punch Man",
-    		"Date": "2016-10-01",
-    		"Time": "12:30",
-    		"Household": null,
-    		"Total": "1201",
-    		"AHousehold": "0.55",
-    		"ATotal": "702"
-    	}, {
-    		"Show": "One Punch Man",
-    		"Date": "2016-10-08",
-    		"Time": "12:30",
-    		"Household": null,
-    		"Total": "1275",
-    		"AHousehold": "0.56",
-    		"ATotal": "721"
-    	}, {
-    		"Show": "One Punch Man",
-    		"Date": "2016-10-08",
-    		"Time": "3:00",
-    		"Household": null,
-    		"Total": "641",
-    		"AHousehold": "0.22",
-    		"ATotal": "286"
-    	}
-
-
-
-
-
+</code></pre></div></li></ul></div><div class="tab-pane" id="ratings_get_response"><h2>HTTP status code <a href="http://httpstatus.es/200" target="_blank">200</a></h2><h3>Body</h3><p><strong>Media type</strong>: application/json</p><p><strong>Type</strong>: object</p><p><strong>Example</strong>:</p><div class="examples"><pre><code>[
+{
+   "Show": "Space Dandy",
+   "Date": "2014-01-04",
+   "Time": "11:30",
+   "Household": "0.80",
+   "Total": "1153",
+   "AHousehold": null,
+   "ATotal": null
+}, {
+   "Show": "Bleach",
+   "Date": "2014-01-04",
+   "Time": "12:00",
+   "Household": "0.80",
+   "Total": "1084",
+   "AHousehold": null,
+   "ATotal": null
+},{
+	"Show": "Naruto Shippuden",
+	"Date": "2014-01-04",
+	"Time": "12:30",
+	"Household": "0.70",
+	"Total": "933",
+	"AHousehold": null,
+	"ATotal": null
+}, {
+	"Show": "One Piece",
+	"Date": "2014-01-04",
+	"Time": "1:00",
+	"Household": "0.60",
+	"Total": "856",
+	"AHousehold": null,
+	"ATotal": null
+}, {
+	"Show": "Soul Eater",
+	"Date": "2014-01-04",
+	"Time": "1:30",
+	"Household": "0.60",
+	"Total": "866",
+	"AHousehold": null,
+	"ATotal": null
+}, {
+	"Show": "Sword Art Online",
+	"Date": "2014-01-04",
+	"Time": "2:00",
+	"Household": "0.60",
+	"Total": "773",
+	"AHousehold": null,
+	"ATotal": null
+}, {
+	"Show": "FLCL",
+	"Date": "2014-01-04",
+	"Time": "2:30",
+	"Household": "0.50",
+	"Total": "605",
+	"AHousehold": null,
+	"ATotal": null
+}, {
+	"Show": "Naruto",
+	"Date": "2014-01-04",
+	"Time": "3:00",
+	"Household": "0.50",
+	"Total": "685",
+	"AHousehold": null,
+	"ATotal": null
+}, {
+	"Show": "FMA Brotherhood",
+	"Date": "2014-01-04",
+	"Time": "3:30",
+	"Household": "0.40",
+	"Total": "532",
+	"AHousehold": null,
+	"ATotal": null
+}, {
+	"Show": "Ghost in the Shell",
+	"Date": "2014-01-04",
+	"Time": "4:00",
+	"Household": "0.40",
+	"Total": "500",
+	"AHousehold": null,
+	"ATotal": null
+}, {
+	"Show": "IGPX",
+	"Date": "2014-01-04",
+	"Time": "4:30",
+	"Household": "0.40",
+	"Total": "462",
+	"AHousehold": null,
+	"ATotal": null
+}, {
+	"Show": "Star Wars the Clone Wars",
+	"Date": "2014-01-04",
+	"Time": "5:00",
+	"Household": "0.40",
+	"Total": "531",
+	"AHousehold": null,
+	"ATotal": null
+}, {
+	"Show": "InuYasha",
+	"Date": "2014-01-04",
+	"Time": "5:30",
+	"Household": "0.40",
+	"Total": "547",
+	"AHousehold": null,
+	"ATotal": null
+}
 ]
 
 </code></pre></div><h2>HTTP status code <a href="http://httpstatus.es/404" target="_blank">404</a></h2><h3>Body</h3><p><strong>Media type</strong>: application/json</p><p><strong>Type</strong>: object</p><p><strong>Example</strong>:</p><div class="examples"><pre><code>{"message": "rating not found"}
-</code></pre></div></div></div></div></div></div></div></div></div></div></div></div><div class="col-md-3"><div id="sidebar" class="hidden-print affix" role="complementary"><ul class="nav nav-pills nav-stacked"><li><a href="#ratings">/ratings</a></li></ul></div></div></div></div></body></html>
+</code></pre></div></div></div></div></div></div></div><div class="modal fade" tabindex="0" id="ratings_delete"><div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_delete">delete</span> <span class="parent"></span>/ratings</h4></div><div class="modal-body"><div class="alert alert-info"><p>Deletes a ratings instance from the database</p><p>Must pass a Date or a Show in the header parameters for the delete to be successfull</p></div><ul class="nav nav-tabs"><li class="active"><a href="#ratings_delete_request" data-toggle="tab">Request</a></li></ul><div class="tab-content"><div class="tab-pane active" id="ratings_delete_request"><h3>Headers</h3><ul><li><strong>show</strong>: <em>required (string)</em><p>Provides the name of the show to be deleted</p><p>If we delete GXP we can pretend like that show never happened :)</p><p><strong>Example</strong>:</p><div class="examples"><pre><code>"Tenchi Muyo GXP"
+</code></pre></div></li><li><strong>saturday</strong>: <em>required (string)</em><p>Provides the date of the show to be deleted</p><p>Note that this must be in YYYY-MM-DD</p><p><strong>Example</strong>:</p><div class="examples"><pre><code>"2012-11-10"
+</code></pre></div></li></ul></div></div></div></div></div></div></div></div></div></div></div><div class="col-md-3"><div id="sidebar" class="hidden-print affix" role="complementary"><ul class="nav nav-pills nav-stacked"><li><a href="#ratings">/ratings</a></li></ul></div></div></div></div></body></html>
