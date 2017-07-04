@@ -53,11 +53,16 @@ resourceTypes:
 traits:
     searchable:
         queryParameters:
-            query:
+            #The queryName will be either a specific date being searched for
+            #or a show
+            <<queryName>>:
+                required: false
                 description: |
                      <<description>>
                 example: |
                     <<example>>
+
+
     orderable:
         queryParameters:
             orderBy:
@@ -86,7 +91,7 @@ traits:
                 default: 10
 
 
-/shows:
+/ratings:
     type:
         #giving an example of the array of schemas/rating.schema
         #json objects that will be returned
@@ -96,10 +101,24 @@ traits:
         #calling a trait
         is:
             [
+                #This is if the client wants a specific show
                 searchable:{
+                    queryName:
+                        "show",
                     description:
                         "Give a show name and this will return the first 20 rating elements",
                     example:
-                        "FLCL"
+                        "One Punch Man"
+                },
+                #This is if the client wants a specific date
+                searchable:{
+                    queryName:
+                        "saturday",
+                    description:
+                        "Provide the date you want toonami ratings for
+                        must be in YYYY-MM-DD format",
+                    example:
+                        "2014-01-04"
+
                 }
             ]
