@@ -68,9 +68,11 @@ traits:
         queryParameters:
             orderBy:
                 description: |
-                    Order by field: <<fieldsList>>
+                    You can optionally order by field: <<fieldsList>>
                 type: string
                 required: false
+                example: |
+                    <<getExample>>
             order:
                 description: Order
                 enum: [desc, asc]
@@ -121,13 +123,26 @@ traits:
                     example:
                         "2014-01-04"
 
-                }
+                },
+                orderable:{
+                    fieldsList:
+                        "[\"show\", \"saturday\" ]",
+                    getExample:
+                            A couple of get examples
+
+                            GET /ratings?orderby=show http/1.1
+
+                            GET /ratings?orderby=saturday http/1.1
+
+                            GET /ratings?orderby=saturday&order=asc http/1.1
+
+                    }
             ]
     delete:
         description: |
             Deletes a ratings instance from the database
 
-            Must pass a Date or a Show in the header parameters for
+            Must pass a Date and a Show in the header parameters for
             the delete to be successfull
         headers:
             show:
