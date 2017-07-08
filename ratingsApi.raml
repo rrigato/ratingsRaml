@@ -66,7 +66,7 @@ traits:
 
     orderable:
         queryParameters:
-            orderBy:
+            orderby:
                 description: |
                     You can optionally order by field: <<fieldsList>>
                 type: string
@@ -74,8 +74,12 @@ traits:
                 example: |
                     <<getExample>>
             order:
-                description: Order
-                enum: [desc, asc]
+                description: |
+                    Order the orderby query parameter
+
+                    The default is to order desc (descending)
+                example: |
+                    <<getOrder>>
                 default: desc
                 required: false
     pageable:
@@ -126,15 +130,17 @@ traits:
                 },
                 orderable:{
                     fieldsList:
-                        "[\"show\", \"saturday\" ]",
+                        "[show, saturday ]",
                     getExample:
-                            A couple of get examples
+                        A couple of get examples
 
-                            GET /ratings?orderby=show http/1.1
+                        GET /ratings?orderby=show http/1.1
 
-                            GET /ratings?orderby=saturday http/1.1
+                        GET /ratings?orderby=saturday http/1.1,
+                    getOrder:
+                        GET /ratings?orderby=show&order=asc http/1.1
 
-                            GET /ratings?orderby=saturday&order=asc http/1.1
+                        GET /ratings?orderby=saturday&order=asc http/1.1
 
                     }
             ]
